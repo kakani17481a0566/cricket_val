@@ -2,8 +2,13 @@
 import React from 'react';
 
 const LoveStats: React.FC = () => {
+  // Calculate days since Pelli Choopulu
+  const pelliChoopuluDate = new Date("December 26, 2025").getTime();
+  const now = new Date().getTime();
+  const daysSince = Math.floor((now - pelliChoopuluDate) / (1000 * 60 * 60 * 24));
+
   const stats = [
-    { label: "Words in Intermediate", value: '"Bye"', icon: '🎒', color: 'text-gray-400' },
+    { label: "Days Since Pelli Choopulu", value: daysSince.toString(), icon: '💍', color: 'text-purple-500' },
     { label: "Village Sunset Dates", value: 'Infinite', icon: '🌅', color: 'text-orange-500' },
     { label: "Dhoni-Level Calmness", value: '100%', icon: '7️⃣', color: 'text-yellow-600' },
     { label: "Coffee-to-Dog Ratio", value: '1:100', icon: '🐕', color: 'text-rose-500' }

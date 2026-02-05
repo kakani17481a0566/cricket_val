@@ -25,6 +25,14 @@ const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar
       color: "from-yellow-400 to-amber-600"
     },
     {
+      title: "Pelli Choopulu",
+      date: "December 26, 2025",
+      icon: "💍",
+      subIcon: "✨",
+      desc: "The traditional arranged marriage meeting! Our families came together, and what started as a formal 'Pelli Choopulu' turned into the beginning of our forever. From silent classmates to potential life partners.",
+      color: "from-purple-400 to-pink-600"
+    },
+    {
       title: "Dhoni, Dogs & Coffee",
       date: "Breaking the Silence",
       icon: "🏏",
@@ -46,23 +54,23 @@ const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar
     <div className="max-w-4xl mx-auto px-6 py-24 relative" id="timeline">
       <div className="text-center mb-24">
         <div className="inline-block px-4 py-1 rounded-full bg-rose-50 text-rose-500 text-[10px] font-black tracking-[0.4em] uppercase mb-4 border border-rose-100">
-          Our Full Match History
+          🎒 Our Full Match History 💕
         </div>
         <h2 className="text-6xl font-romantic font-bold text-gray-800 mb-4">From Silence to Soulmates</h2>
         <p className="text-gray-400 font-medium uppercase tracking-[0.2em] text-xs">A Story Written by Parents & Polished by Love</p>
       </div>
 
       <div className="relative">
-        {/* Timeline Central Line */}
+        {/* Timeline Central Line - Desktop Only */}
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-slate-100 via-rose-200 to-emerald-100 -translate-x-1/2"></div>
 
         {journey.map((item, index) => (
           <div
             key={index}
-            className={`relative mb-32 md:flex items-center justify-between w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            className={`relative mb-12 md:mb-32 md:flex items-center justify-between w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
           >
-            {/* The Icon Bubble */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-20">
+            {/* The Icon Bubble - DESKTOP ONLY */}
+            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
               <div className={`w-24 h-24 bg-gradient-to-br ${item.color} rounded-[2rem] p-1 shadow-2xl transform transition-transform hover:scale-110 hover:rotate-6`}>
                 <div className="w-full h-full bg-white rounded-[1.8rem] flex items-center justify-center relative overflow-hidden">
                   <span className="text-4xl z-10">{item.icon}</span>
@@ -73,17 +81,26 @@ const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar
             </div>
 
             {/* Content Card */}
-            <div className={`md:w-[42%] mt-32 md:mt-0 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-              <div className="bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border border-rose-50 hover:shadow-2xl transition-all group relative overflow-hidden">
+            <div className={`w-full md:w-[42%] ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+              <div className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-rose-50 hover:shadow-2xl transition-all group relative overflow-hidden">
                 <div className={`absolute top-0 ${index % 2 === 0 ? 'left-0' : 'right-0'} w-2 h-full bg-gradient-to-b ${item.color}`}></div>
 
-                <div className="text-[10px] font-black text-rose-300 mb-3 uppercase tracking-[0.3em] flex items-center gap-2 group-hover:text-rose-500 transition-colors">
-                  {index % 2 !== 0 && <span className="w-8 h-px bg-rose-100 hidden md:block"></span>}
-                  {item.date}
-                  {index % 2 === 0 && <span className="w-8 h-px bg-rose-100 hidden md:block"></span>}
+                {/* Mobile Icon - Floating inside card */}
+                <div className="md:hidden absolute top-4 right-4 animate-fade-in">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-2xl p-0.5 shadow-lg`}>
+                    <div className="w-full h-full bg-white rounded-[0.9rem] flex items-center justify-center relative">
+                      <span className="text-2xl">{item.icon}</span>
+                    </div>
+                  </div>
                 </div>
 
-                <h3 className="text-2xl font-black text-gray-800 mb-4 group-hover:translate-x-1 transition-transform">{item.title}</h3>
+                <div className="text-[10px] font-black text-rose-300 mb-3 uppercase tracking-[0.3em] flex items-center gap-2 group-hover:text-rose-500 transition-colors">
+                  {/* Desktop connecting lines */}
+                  <span className={`w-8 h-px bg-rose-100 hidden md:inline-block ${index % 2 !== 0 ? '' : 'order-last'}`}></span>
+                  {item.date}
+                </div>
+
+                <h3 className="text-2xl font-black text-gray-800 mb-4 pr-12 md:pr-0 group-hover:translate-x-1 transition-transform">{item.title}</h3>
                 <p className="text-gray-500 leading-relaxed font-medium italic text-sm">
                   "{item.desc}"
                 </p>

@@ -15,7 +15,7 @@ const DualHeartFrame: React.FC<DualHeartFrameProps> = ({ mohithAvatar, likhitaAv
           <div className="aspect-[3/4] overflow-hidden bg-emerald-50 rounded-sm shadow-inner border border-emerald-50">
             <img
               src={mohithAvatar || "https://raw.githubusercontent.com/username/repo/main/mohith.jpg"}
-              alt="Mohith"
+              alt="Mohith - From our village life together"
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
               onError={(e) => {
                 e.currentTarget.src = "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800";
@@ -43,7 +43,7 @@ const DualHeartFrame: React.FC<DualHeartFrameProps> = ({ mohithAvatar, likhitaAv
           <div className="aspect-[3/4] overflow-hidden bg-purple-50 rounded-sm shadow-inner border border-purple-50">
             <img
               src={likhitaAvatar || "https://raw.githubusercontent.com/username/repo/main/likhita.jpg"}
-              alt="Likhita"
+              alt="Likhita - My soulmate and best friend"
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
               onError={(e) => {
                 e.currentTarget.src = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800";

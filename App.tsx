@@ -25,6 +25,7 @@ const Countdown: React.FC = () => {
       const difference = targetDate - now;
       if (difference <= 0) {
         clearInterval(interval);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       } else {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -43,6 +44,19 @@ const Countdown: React.FC = () => {
     { label: 'Min', value: timeLeft.minutes, icon: '🐕' },
     { label: 'Sec', value: timeLeft.seconds, icon: '7️⃣' },
   ];
+
+  // Check if Valentine's Day has arrived
+  const isValentinesDay = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;
+
+  if (isValentinesDay) {
+    return (
+      <div className="text-center mt-12 mb-8 animate-fade-in">
+        <div className="text-8xl mb-4 animate-heartbeat">🎉💖🎉</div>
+        <div className="text-4xl font-romantic font-bold text-rose-600 mb-2">Happy Valentine's Day!</div>
+        <p className="text-xl text-rose-400 font-medium">Our special day is finally here! ❤️</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex gap-2 sm:gap-4 justify-center mt-12 mb-8 flex-wrap">
@@ -63,8 +77,10 @@ const Countdown: React.FC = () => {
 const SimpleFunnyApp: React.FC = () => {
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [herName, setHerName] = useState(localStorage.getItem('herName') || 'Likhita');
-  const [isSettingsOpen, setIsSettingsOpen] = useState(!localStorage.getItem('herName'));
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false); // Disabled opening modal
   const [isRoseShowerActive, setIsRoseShowerActive] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   const [mohithAvatar, setMohithAvatar] = useState<string | null>(localStorage.getItem('mohithAvatar') || '/assets/likhita.jpg');
   const [likhitaAvatar, setLikhitaAvatar] = useState<string | null>(localStorage.getItem('likhitaAvatar') || '/assets/mohith.jpg');
@@ -78,6 +94,22 @@ const SimpleFunnyApp: React.FC = () => {
     }
   }, [isMusicPlaying]);
 
+  useEffect(() => {
+    // Loading state
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+
+    // Back to top button visibility
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const saveSettings = () => {
     if (herName.trim()) {
       localStorage.setItem('herName', herName);
@@ -87,6 +119,39 @@ const SimpleFunnyApp: React.FC = () => {
   };
 
   const triggerRoses = () => setIsRoseShowerActive(true);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Our Love Story - Mohith & Likhita',
+          text: 'From Silence to Soulmates - Our Valentine\'s Journey',
+          url: window.location.href
+        });
+      } catch (err) {
+        console.log('Share cancelled');
+      }
+    } else {
+      // Fallback: copy to clipboard
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#FFF4F7] flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-8xl mb-4 animate-heartbeat">❤️</div>
+          <div className="text-2xl font-romantic text-rose-500 animate-pulse">Loading our love story...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#FFF4F7] selection:bg-rose-100">
@@ -178,6 +243,19 @@ const SimpleFunnyApp: React.FC = () => {
 
         <FinalSurprise name={herName} onSurprise={triggerRoses} />
       </main>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-[100] bg-rose-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all animate-fade-in"
+          aria-label="Scroll to top"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      )}
 
       <footer className="text-center py-20 bg-white border-t border-rose-50">
         <div className="text-4xl mb-4">🏏☕🐕🌾</div>

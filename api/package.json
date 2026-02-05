@@ -1,0 +1,8 @@
+{
+    "name": "likitha-api",
+    "version": "1.0.0",
+    "description": "API for Likitha's Valentine Website",
+    "dependencies": {
+        "nodemailer": "^6.9.9"
+    }
+}
