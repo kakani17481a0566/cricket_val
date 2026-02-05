@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf4ff"/>
+      <stop offset="100%" stop-color="#fae8ff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#bg2)" stroke="#e879f9" stroke-width="2"/>
+  
+  <!-- Body -->
+  <path d="M50,180 C50,140 150,140 150,180 V200 H50 V180 Z" fill="#d8b4fe"/> <!-- Lilac Dress -->
+  <path d="M50,180 Q100,210 150,180" fill="none" stroke="#a855f7" stroke-width="2" stroke-dasharray="5,5"/> <!-- Embroidery detail -->
+  
+  <!-- Face -->
+  <circle cx="100" cy="90" r="40" fill="#f8d7c1"/>
+  
+  <!-- Hair: Long wavy dark -->
+  <path d="M55,90 Q40,120 45,160 L155,160 Q160,120 145,90 Q145,40 100,30 Q55,40 55,90 Z" fill="#2d1b0e"/>
+  
+  <!-- Eyes -->
+  <circle cx="85" cy="90" r="4" fill="#2d1b0e"/>
+  <circle cx="115" cy="90" r="4" fill="#2d1b0e"/>
+  
+  <!-- Smile -->
+  <path d="M90,110 Q100,115 110,110" stroke="#be123c" stroke-width="2" fill="none"/>
+  
+  <!-- Bindi -->
+  <circle cx="100" cy="75" r="2" fill="#be123c"/>
+</svg>

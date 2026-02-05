@@ -1,0 +1,33 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#bg)" stroke="#bae6fd" stroke-width="2"/>
+  
+  <!-- Body -->
+  <path d="M50,180 C50,140 150,140 150,180 V200 H50 V180 Z" fill="#047857"/> <!-- Emerald Shirt -->
+  
+  <!-- Face -->
+  <circle cx="100" cy="90" r="45" fill="#f8d7c1"/>
+  
+  <!-- Hair variables -->
+  <path d="M60,80 Q100,20 140,80" fill="#1f2937" />
+  
+  <!-- Glasses -->
+  <g stroke="#1f2937" stroke-width="3" fill="none">
+    <circle cx="85" cy="90" r="12"/>
+    <circle cx="115" cy="90" r="12"/>
+    <line x1="97" y1="90" x2="103" y2="90"/>
+    <line x1="73" y1="90" x2="55" y2="85"/> <!-- Arm left -->
+    <line x1="127" y1="90" x2="145" y2="85"/> <!-- Arm right -->
+  </g>
+  
+  <!-- Beard -->
+  <path d="M65,110 Q100,150 135,110 L135,100 L65,100 Z" fill="#1f2937" opacity="0.8"/>
+
+  <!-- Smile -->
+  <path d="M85,120 Q100,130 115,120" stroke="white" stroke-width="2" fill="none"/>
+</svg>
