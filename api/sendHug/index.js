@@ -10,13 +10,13 @@ module.exports = async function (context, req) {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'mohithk80@gmail.com', // Sending from your email
+            user: 'kakanimohithkrishnasai@gmail.com', // Sending from your email
             pass: 'bjan jkyd npgd zlgk'  // Your App Password
         }
     });
 
     const mailOptions = {
-        from: '"Virtual Hugs ❤️" <mohithk80@gmail.com>',
+        from: '"Virtual Hugs ❤️" <kakanimohithkrishnasai@gmail.com>',
         to: 'kakanimohithkrishnasai@gmail.com', // Updated recipient
         subject: `🫂 You received a Virtual Hug! (Count: ${count})`,
         html: `
