@@ -1,0 +1,7 @@
+{
+  "name": "Valentine's Week Love Story",
+  "description": "A beautiful, interactive Valentine's Day week celebration app featuring a day-by-day countdown, romantic animations, and an AI-powered love letter generator.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
