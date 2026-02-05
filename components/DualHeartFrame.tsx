@@ -11,10 +11,10 @@ const DualHeartFrame: React.FC<DualHeartFrameProps> = ({ mohithAvatar, likhitaAv
     <div className="relative flex flex-col md:flex-row items-center justify-center gap-12 md:gap-0 mt-12 mb-20 animate-fade-in py-10">
       {/* Mohith's Frame */}
       <div className="relative group z-20">
-        <div className="bg-white p-6 shadow-[0_40px_80px_rgba(0,0,0,0.12)] rounded-sm transform -rotate-3 group-hover:rotate-0 transition-all duration-700 border-b-[80px] border-white w-64 md:w-80 overflow-visible">
+        <div className="bg-white p-6 shadow-[0_40px_80px_rgba(0,0,0,0.12)] rounded-sm transform -rotate-3 group-hover:rotate-0 transition-all duration-700 border-b-[80px] border-white w-56 sm:w-64 md:w-80 overflow-visible">
           <div className="aspect-[3/4] overflow-hidden bg-emerald-50 rounded-sm shadow-inner border border-emerald-50">
-            <img 
-              src={mohithAvatar || "https://raw.githubusercontent.com/username/repo/main/mohith.jpg"} 
+            <img
+              src={mohithAvatar || "https://raw.githubusercontent.com/username/repo/main/mohith.jpg"}
               alt="Mohith"
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
               onError={(e) => {
@@ -39,10 +39,10 @@ const DualHeartFrame: React.FC<DualHeartFrameProps> = ({ mohithAvatar, likhitaAv
 
       {/* Likhita's Frame */}
       <div className="relative group z-20">
-        <div className="bg-white p-6 shadow-[0_40px_80px_rgba(0,0,0,0.12)] rounded-sm transform rotate-3 group-hover:rotate-0 transition-all duration-700 border-b-[80px] border-white w-64 md:w-80 overflow-visible">
+        <div className="bg-white p-6 shadow-[0_40px_80px_rgba(0,0,0,0.12)] rounded-sm transform rotate-3 group-hover:rotate-0 transition-all duration-700 border-b-[80px] border-white w-56 sm:w-64 md:w-80 overflow-visible">
           <div className="aspect-[3/4] overflow-hidden bg-purple-50 rounded-sm shadow-inner border border-purple-50">
-            <img 
-              src={likhitaAvatar || "https://raw.githubusercontent.com/username/repo/main/likhita.jpg"} 
+            <img
+              src={likhitaAvatar || "https://raw.githubusercontent.com/username/repo/main/likhita.jpg"}
               alt="Likhita"
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
               onError={(e) => {
@@ -56,7 +56,7 @@ const DualHeartFrame: React.FC<DualHeartFrameProps> = ({ mohithAvatar, likhitaAv
           <div className="absolute top-[-15px] right-[-15px] text-3xl animate-pulse delay-300">🌸</div>
         </div>
       </div>
-      
+
       {/* Decorative Text */}
       <div className="absolute -bottom-16 text-center w-full">
         <p className="text-rose-300 font-black uppercase tracking-[0.8em] text-[10px] animate-pulse">Two Lives &bull; One Heartbeat &bull; 2026</p>

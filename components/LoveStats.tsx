@@ -13,7 +13,7 @@ const LoveStats: React.FC = () => {
     <div className="max-w-6xl mx-auto px-6 py-10">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {stats.map((stat, i) => (
-          <div key={i} className="bg-white p-8 rounded-[2.5rem] border border-rose-50 shadow-sm text-center transform hover:scale-105 transition-all duration-300">
+          <div key={i} className="bg-white p-4 md:p-8 rounded-[2.5rem] border border-rose-50 shadow-sm text-center transform hover:scale-105 transition-all duration-300">
             <div className="text-4xl mb-3">{stat.icon}</div>
             <div className={`text-2xl md:text-3xl font-black mb-2 ${stat.color}`}>{stat.value}</div>
             <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400 leading-tight px-2">{stat.label}</div>

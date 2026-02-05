@@ -8,34 +8,34 @@ interface LoveTimelineProps {
 
 const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar }) => {
   const journey = [
-    { 
-      title: "The Campus Path", 
-      date: "Intermediate Years", 
-      icon: "🎒", 
+    {
+      title: "The Campus Path",
+      date: "Intermediate Years",
+      icon: "🎒",
       subIcon: "🚶‍♂️",
       desc: "We were in the same college for our Intermediate years, crossing paths every single day. Yet, the only word we ever exchanged was a quick 'Bye'. A two-year silence that destiny was waiting to break.",
       color: "from-slate-400 to-slate-500"
     },
-    { 
-      title: "The Parents' Match", 
-      date: "The Arranged Meeting", 
-      icon: "☝️", 
+    {
+      title: "The Parents' Match",
+      date: "The Arranged Meeting",
+      icon: "☝️",
       subIcon: "🤝",
       desc: "Our parents stepped in as the ultimate umpires! They 'arranged' what we were too shy to start ourselves, turning those silent student years into a lifetime partnership.",
       color: "from-yellow-400 to-amber-600"
     },
-    { 
-      title: "Dhoni, Dogs & Coffee", 
-      date: "Breaking the Silence", 
-      icon: "🏏", 
+    {
+      title: "Dhoni, Dogs & Coffee",
+      date: "Breaking the Silence",
+      icon: "🏏",
       subIcon: "🐕",
       desc: "Finally talking! Bonding over my love for MS Dhoni (Thala!), your obsession with every dog in the village, and our 'intense' debate over my coffee addiction.",
       color: "from-rose-400 to-rose-600"
     },
-    { 
-      title: "Our Village Sunset", 
-      date: "2026 & Forever", 
-      icon: "🌾", 
+    {
+      title: "Our Village Sunset",
+      date: "2026 & Forever",
+      icon: "🌾",
       subIcon: "🏡",
       desc: "Building our dream life in the village. No more just saying 'Bye'—now it's 'Good Morning' every day for the rest of our lives. Finishing it in style!",
       color: "from-emerald-400 to-emerald-600"
@@ -57,8 +57,8 @@ const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar
         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-slate-100 via-rose-200 to-emerald-100 -translate-x-1/2"></div>
 
         {journey.map((item, index) => (
-          <div 
-            key={index} 
+          <div
+            key={index}
             className={`relative mb-32 md:flex items-center justify-between w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
           >
             {/* The Icon Bubble */}
@@ -74,22 +74,22 @@ const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar
 
             {/* Content Card */}
             <div className={`md:w-[42%] mt-32 md:mt-0 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-              <div className="bg-white p-10 rounded-[3rem] shadow-xl border border-rose-50 hover:shadow-2xl transition-all group relative overflow-hidden">
+              <div className="bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border border-rose-50 hover:shadow-2xl transition-all group relative overflow-hidden">
                 <div className={`absolute top-0 ${index % 2 === 0 ? 'left-0' : 'right-0'} w-2 h-full bg-gradient-to-b ${item.color}`}></div>
-                
+
                 <div className="text-[10px] font-black text-rose-300 mb-3 uppercase tracking-[0.3em] flex items-center gap-2 group-hover:text-rose-500 transition-colors">
                   {index % 2 !== 0 && <span className="w-8 h-px bg-rose-100 hidden md:block"></span>}
                   {item.date}
                   {index % 2 === 0 && <span className="w-8 h-px bg-rose-100 hidden md:block"></span>}
                 </div>
-                
+
                 <h3 className="text-2xl font-black text-gray-800 mb-4 group-hover:translate-x-1 transition-transform">{item.title}</h3>
                 <p className="text-gray-500 leading-relaxed font-medium italic text-sm">
                   "{item.desc}"
                 </p>
               </div>
             </div>
-            
+
             {/* Empty space for the other side on desktop */}
             <div className="hidden md:block md:w-[42%]"></div>
           </div>

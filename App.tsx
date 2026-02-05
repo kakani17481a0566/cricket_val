@@ -45,11 +45,11 @@ const Countdown: React.FC = () => {
   ];
 
   return (
-    <div className="flex gap-4 justify-center mt-12 mb-8">
+    <div className="flex gap-2 sm:gap-4 justify-center mt-12 mb-8 flex-wrap">
       {items.map((item) => (
         <div
           key={item.label}
-          className="relative group bg-white/70 backdrop-blur-md px-6 py-4 rounded-3xl border border-white shadow-xl text-center min-w-[90px] transition-all hover:-translate-y-2 cursor-default"
+          className="relative group bg-white/70 backdrop-blur-md px-4 sm:px-6 py-4 rounded-3xl border border-white shadow-xl text-center min-w-[70px] sm:min-w-[90px] transition-all hover:-translate-y-2 cursor-default"
         >
           <div className="text-xl mb-1">{item.icon}</div>
           <div className="text-3xl font-black text-rose-500 tabular-nums">{item.value}</div>
@@ -66,8 +66,8 @@ const SimpleFunnyApp: React.FC = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(!localStorage.getItem('herName'));
   const [isRoseShowerActive, setIsRoseShowerActive] = useState(false);
 
-  const [mohithAvatar, setMohithAvatar] = useState<string | null>(localStorage.getItem('mohithAvatar') || '/assets/mohith.jpg');
-  const [likhitaAvatar, setLikhitaAvatar] = useState<string | null>(localStorage.getItem('likhitaAvatar') || '/assets/likhita.jpg');
+  const [mohithAvatar, setMohithAvatar] = useState<string | null>(localStorage.getItem('mohithAvatar') || '/assets/likhita.jpg');
+  const [likhitaAvatar, setLikhitaAvatar] = useState<string | null>(localStorage.getItem('likhitaAvatar') || '/assets/mohith.jpg');
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -98,7 +98,7 @@ const SimpleFunnyApp: React.FC = () => {
       {/* Settings Modal */}
       {isSettingsOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-rose-950/20 backdrop-blur-xl p-4">
-          <div className="bg-white p-12 rounded-[4rem] shadow-2xl max-w-sm w-full text-center border-8 border-pink-50 animate-fade-in">
+          <div className="bg-white p-6 md:p-12 rounded-[4rem] shadow-2xl max-w-sm w-full text-center border-8 border-pink-50 animate-fade-in">
             <div className="text-8xl mb-8">🌾🐕🏏</div>
             <h2 className="text-4xl font-romantic font-bold text-rose-500 mb-6">Hey Likhita!</h2>
             <p className="text-gray-400 text-[10px] mb-8 font-black uppercase tracking-widest leading-relaxed px-4">From silent Intermediate students to soulmates. Ready for Mohith's surprise?</p>
@@ -121,10 +121,10 @@ const SimpleFunnyApp: React.FC = () => {
       )}
 
       {/* Sticky Simple Nav */}
-      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] bg-white/80 backdrop-blur-2xl border border-white px-8 py-3 rounded-full flex gap-8 items-center shadow-lg">
-        <span className="font-romantic text-2xl font-bold text-rose-600">Our Arranged Destiny</span>
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] bg-white/80 backdrop-blur-2xl border border-white px-4 md:px-8 py-3 rounded-full flex gap-2 md:gap-8 items-center shadow-lg">
+        <span className="font-romantic text-lg sm:text-xl md:text-2xl font-bold text-rose-600">Our Arranged Destiny</span>
         <div className="h-4 w-px bg-rose-100"></div>
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-3 md:gap-6 items-center">
           <button onClick={triggerRoses} className="text-xl hover:scale-125 transition-transform">🌹</button>
           <button onClick={() => setIsMusicPlaying(!isMusicPlaying)} className="text-xl hover:scale-125 transition-transform">
             {isMusicPlaying ? '🔊' : '🔇'}
@@ -138,7 +138,7 @@ const SimpleFunnyApp: React.FC = () => {
           <div className="inline-block px-6 py-2 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-black tracking-[0.4em] uppercase mb-8 border border-emerald-100">
             Intermediate Campus &bull; Arranged Marriage &bull; Village Dream
           </div>
-          <h1 className="text-6xl md:text-9xl font-romantic font-bold text-gray-800 leading-none mb-10">
+          <h1 className="text-5xl sm:text-6xl md:text-9xl font-romantic font-bold text-gray-800 leading-none mb-10">
             Finished <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-emerald-500 to-rose-500 bg-clip-text text-transparent italic">
               In Style.
@@ -147,7 +147,7 @@ const SimpleFunnyApp: React.FC = () => {
 
           <DualHeartFrame mohithAvatar={mohithAvatar} likhitaAvatar={likhitaAvatar} />
 
-          <p className="text-2xl md:text-3xl text-gray-400 font-medium italic mt-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl md:text-3xl text-gray-400 font-medium italic mt-12 max-w-2xl mx-auto leading-relaxed px-4">
             "In Intermediate, we only said 'Bye'. Now, after those two years of silence and our parents' perfect match, I never want to say it again. I love you more than Thala's winning six and our peaceful village sunsets."
           </p>
 
