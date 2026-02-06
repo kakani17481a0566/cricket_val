@@ -19,21 +19,17 @@ const Countdown: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("February 14, 2026 00:00:00").getTime();
+    const startDate = new Date("December 26, 2025 00:00:00").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
-      const difference = targetDate - now;
-      if (difference <= 0) {
-        clearInterval(interval);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      } else {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        });
-      }
+      const difference = now - startDate;
+
+      setTimeLeft({
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
+      });
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -45,18 +41,7 @@ const Countdown: React.FC = () => {
     { label: 'Sec', value: timeLeft.seconds, icon: '7️⃣' },
   ];
 
-  // Check if Valentine's Day has arrived
-  const isValentinesDay = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;
 
-  if (isValentinesDay) {
-    return (
-      <div className="text-center mt-12 mb-8 animate-fade-in">
-        <div className="text-8xl mb-4 animate-heartbeat">🎉💖🎉</div>
-        <div className="text-4xl font-romantic font-bold text-rose-600 mb-2">Happy Valentine's Day!</div>
-        <p className="text-xl text-rose-400 font-medium">Our special day is finally here! ❤️</p>
-      </div>
-    );
-  }
 
   return (
     <div className="flex gap-2 sm:gap-4 justify-center mt-12 mb-8 flex-wrap">
