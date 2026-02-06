@@ -20,10 +20,17 @@ const LoginOverlay: React.FC<{ onLogin: (role: UserRole) => void }> = ({ onLogin
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
+    const today = new Date();
+    const startDate = new Date('2026-02-07T00:00:00'); // Feb 7th, 2026
+
     if (username === 'developer' && password === 'developer') {
       onLogin('developer');
     } else if (username === 'likitha' && password === 'likitha') {
-      onLogin('likitha');
+      if (today < startDate) {
+        setError('Wait until Feb 7th! 🤫');
+      } else {
+        onLogin('likitha');
+      }
     } else {
       setError('Invalid credentials');
     }
@@ -109,7 +116,7 @@ const Countdown: React.FC = () => {
 };
 
 const SimpleFunnyApp: React.FC = () => {
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(true);
   const [herName, setHerName] = useState(localStorage.getItem('herName') || 'Likhita');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false); // Disabled opening modal
   const [isRoseShowerActive, setIsRoseShowerActive] = useState(false);
@@ -124,8 +131,15 @@ const SimpleFunnyApp: React.FC = () => {
 
   useEffect(() => {
     if (audioRef.current) {
-      if (isMusicPlaying) audioRef.current.play().catch(() => setIsMusicPlaying(false));
-      else audioRef.current.pause();
+      audioRef.current.volume = 0.3; // "Peaceful" low volume
+      if (isMusicPlaying) {
+        audioRef.current.play().catch((e) => {
+          console.log("Autoplay prevented:", e);
+          setIsMusicPlaying(false);
+        });
+      } else {
+        audioRef.current.pause();
+      }
     }
   }, [isMusicPlaying]);
 
@@ -244,7 +258,7 @@ const SimpleFunnyApp: React.FC = () => {
             title="Logout"
           >
             <span className="text-xl group-hover:hidden transition-all">🤍</span>
-            <span className="text-xl hidden group-hover:block animate-pop">💔</span>
+            <span className="text-xl hidden group-hover:block animate-pop">�</span>
           </button>
         </div>
       </nav>
