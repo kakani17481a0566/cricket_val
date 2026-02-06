@@ -57,7 +57,7 @@ const LoginOverlay: React.FC<{ onLogin: (role: UserRole) => void }> = ({ onLogin
             className="w-full px-8 py-5 rounded-[2rem] border-2 border-pink-50 focus:border-rose-400 outline-none transition-all text-center text-xl font-bold text-rose-700 shadow-inner"
           />
           {error && (
-            <p className="text-rose-600 font-black text-xl animate-shake mt-2 bg-rose-100 p-2 rounded-xl transform rotate-2">
+            <p className="text-rose-600 font-bold text-lg animate-funny-bounce mt-3 bg-rose-100/80 px-4 py-2 rounded-2xl mx-auto w-fit shadow-sm">
               {error}
             </p>
           )}

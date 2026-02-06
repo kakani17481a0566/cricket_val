@@ -1,164 +1,302 @@
-
 <!DOCTYPE html>
 <html lang="en" style="scroll-behavior: smooth;">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A beautiful love story from silent Intermediate students to soulmates through arranged marriage. Mohith & Likhita's Valentine's journey from 'Daily Bye' to forever." />
-    <meta name="theme-color" content="#f43f5e" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="From Silence to Soulmates | Mohith & Likhita" />
-    <meta property="og:description" content="Our love story: From silent Intermediate classmates to an arranged destiny. A Valentine's journey filled with village dreams, cricket, coffee, and dogs." />
-    <meta property="og:image" content="https://gentle-flower-0247a0d0f.6.azurestaticapps.net/og-image.jpg" />
-    <meta property="og:url" content="https://gentle-flower-0247a0d0f.6.azurestaticapps.net" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="From Silence to Soulmates | Mohith & Likhita" />
-    <meta name="twitter:description" content="Our Valentine's journey from silent students to soulmates" />
-    <meta name="twitter:image" content="https://gentle-flower-0247a0d0f.6.azurestaticapps.net/og-image.jpg" />
-    
-    <title>Our Valentine's Journey | Likhita & Mohith</title>
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Quicksand', sans-serif;
-        background: #fff5f7;
-        overflow-x: hidden;
-        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ec4899'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"), auto;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="A beautiful love story from silent Intermediate students to soulmates through arranged marriage. Mohith & Likhita's Valentine's journey from 'Daily Bye' to forever." />
+  <meta name="theme-color" content="#f43f5e" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="From Silence to Soulmates | Mohith & Likhita" />
+  <meta property="og:description"
+    content="Our love story: From silent Intermediate classmates to an arranged destiny. A Valentine's journey filled with village dreams, cricket, coffee, and dogs." />
+  <meta property="og:image" content="https://gentle-flower-0247a0d0f.6.azurestaticapps.net/og-image.jpg" />
+  <meta property="og:url" content="https://gentle-flower-0247a0d0f.6.azurestaticapps.net" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From Silence to Soulmates | Mohith & Likhita" />
+  <meta name="twitter:description" content="Our Valentine's journey from silent students to soulmates" />
+  <meta name="twitter:image" content="https://gentle-flower-0247a0d0f.6.azurestaticapps.net/og-image.jpg" />
+
+  <title>Our Valentine's Journey | Likhita & Mohith</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fff5f7;
+      overflow-x: hidden;
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23ec4899'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"), auto;
+    }
+
+    .font-romantic {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 1;
       }
-      .font-romantic {
-        font-family: 'Dancing Script', cursive;
+
+      100% {
+        transform: translateY(-1000px) translateX(100px) rotate(360deg);
+        opacity: 0;
       }
-      @keyframes float {
-        0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(-1000px) translateX(100px) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes rose-fall {
+      0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        opacity: 0;
       }
-      @keyframes rose-fall {
-        0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0; }
+
+      10% {
+        opacity: 1;
       }
-      @keyframes fade-in {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
+
+      90% {
+        opacity: 1;
       }
-      @keyframes pop {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.15); }
-        100% { transform: scale(1); }
+
+      100% {
+        transform: translateY(110vh) translateX(100px) rotate(360deg);
+        opacity: 0;
       }
-      @keyframes shake {
-        0%, 100% { transform: rotate(0deg); }
-        25% { transform: rotate(-5deg); }
-        75% { transform: rotate(5deg); }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
       }
-      @keyframes shimmer {
-        0% { background-position: -200% 0; }
-        100% { background-position: 200% 0; }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      @keyframes heart-burst-anim {
-        0% { transform: scale(0); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: scale(2) translateY(-20px); opacity: 0; }
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(1);
       }
-      @keyframes bounce-subtle {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+
+      50% {
+        transform: scale(1.15);
       }
-      .heart-particle {
-        position: fixed;
-        bottom: -50px;
-        pointer-events: none;
-        z-index: 0;
-        animation: float linear forwards;
+
+      100% {
+        transform: scale(1);
       }
-      .rose-petal {
-        position: fixed;
-        top: -50px;
-        pointer-events: none;
-        z-index: 60;
-        animation: rose-fall linear forwards;
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: rotate(0deg);
       }
-      .animate-fade-in {
-        animation: fade-in 0.8s ease-out forwards;
+
+      25% {
+        transform: rotate(-5deg);
       }
-      .animate-pop {
-        animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      75% {
+        transform: rotate(5deg);
       }
-      .animate-shake {
-        animation: shake 0.5s ease-in-out infinite;
+    }
+
+    @keyframes funny-bounce {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
       }
-      .animate-bounce-subtle {
-        animation: bounce-subtle 2s ease-in-out infinite;
+
+      40% {
+        transform: translateY(-10px) scale(1.1);
       }
-      .shimmer-btn {
-        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-        background-size: 200% 100%;
-        animation: shimmer 3s infinite;
+
+      80% {
+        transform: translateY(2px) scale(0.95);
       }
-      .paper-texture {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        opacity: 0.04;
-        z-index: 100;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .animate-funny-bounce {
+      animation: funny-bounce 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
       }
-      @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+
+      100% {
+        background-position: 200% 0;
       }
-      .animate-heartbeat {
-        animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heart-burst-anim {
+      0% {
+        transform: scale(0);
+        opacity: 0;
       }
-      .glass-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+
+      50% {
+        opacity: 1;
       }
-      .sparkle {
-        position: absolute;
-        pointer-events: none;
-        animation: sparkle-anim 0.8s linear forwards;
-        z-index: 1000;
+
+      100% {
+        transform: scale(2) translateY(-20px);
+        opacity: 0;
       }
-      @keyframes sparkle-anim {
-        0% { transform: scale(0) rotate(0deg); opacity: 0; }
-        50% { opacity: 1; }
-        100% { transform: scale(1.5) rotate(180deg); opacity: 0; }
+    }
+
+    @keyframes bounce-subtle {
+
+      0%,
+      100% {
+        transform: translateY(0);
       }
-      ::-webkit-scrollbar {
-        width: 8px;
+
+      50% {
+        transform: translateY(-10px);
       }
-      ::-webkit-scrollbar-track {
-        background: #fff5f7;
+    }
+
+    .heart-particle {
+      position: fixed;
+      bottom: -50px;
+      pointer-events: none;
+      z-index: 0;
+      animation: float linear forwards;
+    }
+
+    .rose-petal {
+      position: fixed;
+      top: -50px;
+      pointer-events: none;
+      z-index: 60;
+      animation: rose-fall linear forwards;
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
+    }
+
+    .animate-pop {
+      animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .animate-shake {
+      animation: shake 0.5s ease-in-out infinite;
+    }
+
+    .animate-bounce-subtle {
+      animation: bounce-subtle 2s ease-in-out infinite;
+    }
+
+    .shimmer-btn {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+
+    .paper-texture {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      z-index: 100;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    @keyframes heartbeat {
+
+      0%,
+      100% {
+        transform: scale(1);
       }
-      ::-webkit-scrollbar-thumb {
-        background: #fecdd3;
-        border-radius: 10px;
+
+      50% {
+        transform: scale(1.1);
       }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #fda4af;
+    }
+
+    .animate-heartbeat {
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .sparkle {
+      position: absolute;
+      pointer-events: none;
+      animation: sparkle-anim 0.8s linear forwards;
+      z-index: 1000;
+    }
+
+    @keyframes sparkle-anim {
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
       }
-      .interactive-icon:hover {
-        animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+      50% {
+        opacity: 1;
       }
-      .nav-btn {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      100% {
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0;
       }
-      .nav-btn:hover {
-        transform: translateY(-2px);
-      }
-      .nav-btn:active {
-        transform: translateY(1px) scale(0.95);
-      }
-    </style>
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #fff5f7;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #fecdd3;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fda4af;
+    }
+
+    .interactive-icon:hover {
+      animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .nav-btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .nav-btn:active {
+      transform: translateY(1px) scale(0.95);
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -169,49 +307,51 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div class="paper-texture"></div>
-    <div id="root"></div>
-    <script>
-      // Cursor heart trail with enhanced visuals
-      document.addEventListener('mousemove', (e) => {
-        if (Math.random() > 0.90) {
-          const sparkle = document.createElement('div');
-          sparkle.className = 'sparkle';
-          sparkle.innerHTML = Math.random() > 0.5 ? '✨' : '💖';
-          sparkle.style.left = e.pageX + 'px';
-          sparkle.style.top = e.pageY + 'px';
-          sparkle.style.fontSize = (Math.random() * 12 + 8) + 'px';
-          document.body.appendChild(sparkle);
-          setTimeout(() => sparkle.remove(), 800);
-        }
-      });
-      
-      // Click burst effect
-      document.addEventListener('mousedown', (e) => {
-        for(let i=0; i<8; i++) {
-          const bit = document.createElement('div');
-          bit.className = 'sparkle';
-          bit.innerHTML = '❤️';
-          bit.style.left = e.pageX + 'px';
-          bit.style.top = e.pageY + 'px';
-          bit.style.transition = 'all 0.6s cubic-bezier(0, 0, 0.2, 1)';
-          document.body.appendChild(bit);
-          
-          const angle = (i / 8) * Math.PI * 2;
-          const dist = 50 + Math.random() * 50;
-          
-          requestAnimationFrame(() => {
-            bit.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px) scale(0)`;
-            bit.style.opacity = '0';
-          });
-          
-          setTimeout(() => bit.remove(), 600);
-        }
-      });
-    </script>
+
+<body>
+  <div class="paper-texture"></div>
+  <div id="root"></div>
+  <script>
+    // Cursor heart trail with enhanced visuals
+    document.addEventListener('mousemove', (e) => {
+      if (Math.random() > 0.90) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.innerHTML = Math.random() > 0.5 ? '✨' : '💖';
+        sparkle.style.left = e.pageX + 'px';
+        sparkle.style.top = e.pageY + 'px';
+        sparkle.style.fontSize = (Math.random() * 12 + 8) + 'px';
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 800);
+      }
+    });
+
+    // Click burst effect
+    document.addEventListener('mousedown', (e) => {
+      for (let i = 0; i < 8; i++) {
+        const bit = document.createElement('div');
+        bit.className = 'sparkle';
+        bit.innerHTML = '❤️';
+        bit.style.left = e.pageX + 'px';
+        bit.style.top = e.pageY + 'px';
+        bit.style.transition = 'all 0.6s cubic-bezier(0, 0, 0.2, 1)';
+        document.body.appendChild(bit);
+
+        const angle = (i / 8) * Math.PI * 2;
+        const dist = 50 + Math.random() * 50;
+
+        requestAnimationFrame(() => {
+          bit.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px) scale(0)`;
+          bit.style.opacity = '0';
+        });
+
+        setTimeout(() => bit.remove(), 600);
+      }
+    });
+  </script>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
