@@ -10,8 +10,57 @@ import LoveStats from './components/LoveStats';
 import FinalSurprise from './components/FinalSurprise';
 import LoveTimeline from './components/LoveTimeline';
 import DualHeartFrame from './components/DualHeartFrame';
-// Removed generateAvatar import
-// import { generateAvatar } from './services/geminiService';
+
+type UserRole = 'developer' | 'likitha' | null;
+
+const LoginOverlay: React.FC<{ onLogin: (role: UserRole) => void }> = ({ onLogin }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (username === 'developer' && password === 'developer') {
+      onLogin('developer');
+    } else if (username === 'likitha' && password === 'likitha') {
+      onLogin('likitha');
+    } else {
+      setError('Invalid credentials');
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[300] flex items-center justify-center bg-rose-50 backdrop-blur-3xl">
+      <div className="bg-white p-12 rounded-[4rem] shadow-2xl max-w-sm w-full text-center border-8 border-pink-50 animate-fade-in">
+        <div className="text-8xl mb-8">🔐</div>
+        <h2 className="text-4xl font-romantic font-bold text-rose-500 mb-6">Our Love Story</h2>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full px-8 py-5 rounded-[2rem] border-2 border-pink-50 focus:border-rose-400 outline-none transition-all text-center text-xl font-bold text-rose-700 shadow-inner"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full px-8 py-5 rounded-[2rem] border-2 border-pink-50 focus:border-rose-400 outline-none transition-all text-center text-xl font-bold text-rose-700 shadow-inner"
+          />
+          {error && <p className="text-rose-500 font-bold text-sm">{error}</p>}
+          <button
+            type="submit"
+            className="w-full bg-rose-500 text-white font-black py-5 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-[11px]"
+          >
+            Open Heart
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 const Countdown: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number }>({
@@ -66,9 +115,10 @@ const SimpleFunnyApp: React.FC = () => {
   const [isRoseShowerActive, setIsRoseShowerActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [userRole, setUserRole] = useState<UserRole>(null);
 
-  const [mohithAvatar, setMohithAvatar] = useState<string | null>(localStorage.getItem('mohithAvatar') || '/assets/likhita.jpg');
-  const [likhitaAvatar, setLikhitaAvatar] = useState<string | null>(localStorage.getItem('likhitaAvatar') || '/assets/mohith.jpg');
+  const [mohithAvatar, setMohithAvatar] = useState<string | null>(localStorage.getItem('mohithAvatar') || '/assets/mohith_new.jpg');
+  const [likhitaAvatar, setLikhitaAvatar] = useState<string | null>(localStorage.getItem('likhitaAvatar') || '/assets/likhita_new.jpg');
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -123,9 +173,17 @@ const SimpleFunnyApp: React.FC = () => {
     }
   };
 
+  const handleLogout = () => {
+    setUserRole(null);
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (!userRole && !isLoading) {
+    return <LoginOverlay onLogin={setUserRole} />;
+  }
 
   if (isLoading) {
     return (
@@ -175,9 +233,18 @@ const SimpleFunnyApp: React.FC = () => {
         <span className="font-romantic text-lg sm:text-xl md:text-2xl font-bold text-rose-600">Our Arranged Destiny</span>
         <div className="h-4 w-px bg-rose-100"></div>
         <div className="flex gap-3 md:gap-6 items-center">
-          <button onClick={triggerRoses} className="text-xl hover:scale-125 transition-transform">🌹</button>
-          <button onClick={() => setIsMusicPlaying(!isMusicPlaying)} className="text-xl hover:scale-125 transition-transform">
+          <button onClick={triggerRoses} className="text-xl hover:scale-125 transition-transform" title="Rose Shower">🌹</button>
+          <button onClick={() => setIsMusicPlaying(!isMusicPlaying)} className="text-xl hover:scale-125 transition-transform" title="Toggle Music">
             {isMusicPlaying ? '🔊' : '🔇'}
+          </button>
+          <div className="h-4 w-px bg-rose-100"></div>
+          <button
+            onClick={handleLogout}
+            className="group relative flex items-center justify-center w-10 h-10 bg-rose-50 rounded-full hover:bg-rose-500 transition-all duration-300 hover:scale-110 active:scale-95 shadow-inner"
+            title="Logout"
+          >
+            <span className="text-xl group-hover:hidden transition-all">🤍</span>
+            <span className="text-xl hidden group-hover:block animate-pop">💔</span>
           </button>
         </div>
       </nav>
@@ -214,7 +281,7 @@ const SimpleFunnyApp: React.FC = () => {
         </section>
 
         <section id="valentine-week">
-          <ValentineWeek />
+          <ValentineWeek userRole={userRole} />
         </section>
 
         <section id="fun-stuff" className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto px-6">
@@ -226,7 +293,7 @@ const SimpleFunnyApp: React.FC = () => {
           <LoveCoupons />
         </section>
 
-        <FinalSurprise name={herName} onSurprise={triggerRoses} />
+        <FinalSurprise name={herName} onSurprise={triggerRoses} userRole={userRole} />
       </main>
 
       {/* Back to Top Button */}
