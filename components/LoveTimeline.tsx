@@ -24,14 +24,14 @@ const LoveTimeline: React.FC<LoveTimelineProps> = ({ mohithAvatar, likhitaAvatar
       desc: "Our parents stepped in as the ultimate umpires! They 'arranged' what we were too shy to start ourselves, turning those silent student years into a lifetime partnership.",
       color: "from-yellow-400 to-amber-600"
     },
-    {
-      title: "Pelli Choopulu",
-      date: "December 26, 2025",
-      icon: "💍",
-      subIcon: "✨",
-      desc: "The traditional arranged marriage meeting! Our families came together, and what started as a formal 'Pelli Choopulu' turned into the beginning of our forever. From silent classmates to potential life partners.",
-      color: "from-purple-400 to-pink-600"
-    },
+    // {
+    //   title: "Pelli Choopulu",
+    //   date: "December 26, 2025",
+    //   icon: "💍",
+    //   subIcon: "✨",
+    //   desc: "The traditional arranged marriage meeting! Our families came together, and what started as a formal 'Pelli Choopulu' turned into the beginning of our forever. From silent classmates to potential life partners.",
+    //   color: "from-purple-400 to-pink-600"
+    // },
     {
       title: "Dhoni, Dogs & Coffee",
       date: "Breaking the Silence",
