@@ -56,7 +56,11 @@ const LoginOverlay: React.FC<{ onLogin: (role: UserRole) => void }> = ({ onLogin
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-8 py-5 rounded-[2rem] border-2 border-pink-50 focus:border-rose-400 outline-none transition-all text-center text-xl font-bold text-rose-700 shadow-inner"
           />
-          {error && <p className="text-rose-500 font-bold text-sm">{error}</p>}
+          {error && (
+            <p className="text-rose-600 font-black text-xl animate-shake mt-2 bg-rose-100 p-2 rounded-xl transform rotate-2">
+              {error}
+            </p>
+          )}
           <button
             type="submit"
             className="w-full bg-rose-500 text-white font-black py-5 rounded-2xl shadow-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-widest text-[11px]"
